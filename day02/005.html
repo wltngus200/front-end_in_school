@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--자주 사용하는 태그-->
+    <!--a 태그는 href속성이 반드시 필요-->
+    <a href="https://www.naver.com"> 네이버로 이동 </a>
+    <!-- target="_self"가 기본값 현재 탭이 바뀜 _parent, _top은 요즘 안 쓰임 -->
+    <div>
+        <a href="https://google.com" target="_blank">새 창으로 구글로 이동</a>
+    </div>
+    <!-- img는 inline tag alt는 이미지가 뜨지 않을 경우의 출력 메세지 -->
+    <img src="https://image.utoimage.com/preview/cp872722/2022/12/202212008462_500.jpg">
+    <img alt="node.js" src="https://helpx.adobe.com/content/dam/help/en/photoshop/using/quick-actions/remove-background-before-qa1.png">
+
+    <!-- list 태그 : ol=순서(숫자)가 있는 리스트 ul=순서가 없는 리스트 -->
+    <!-- ul을 많이 사용, 디폴트 스타일은 모두를 제거하고 새롭게 스타일을 줘 사용 -->
+    <!-- 예전에는 ul, li를 inline로 변경해서 네비게이션(메뉴)를 만들 때 사용-->
+    <ol>
+        <li>축구</li>
+        <li>농구</li>
+        <li>배구</li>
+    </ol>
+    <ul>
+        <li>야구</li>
+        <li>수구</li>
+        <li>투구</li>    
+    </ul>
+
+    <!-- 90년대 table로 레이아웃을 짰다(수정이 어려움)  CSS, tag(css의 내용에 따라 레이아웃이 다양하게 바뀔 수 있음)-->
+    <!-- 현재는 table 표시가 필요한 곳에만 사용 -->
+    <!-- 가로 한 줄을 감싸는 tr 태그 가장 넓은 컬럼을 기준으로 너비가 정해짐 -->
+    <style>
+        table, td, th {border: 1px solid #ccc; border-collapse:collapse }
+        td, th {padding: 10px;}
+        /* border과 마진 사이의 공간으로 인해 2중 선->여백을 없앰 */
+        thead{background-color: cornflowerblue; color : #fff}
+        /* #ffffff= f하나가 각 2자씩을 담당 */
+        .text-center {text-align: center;}
+        .text-right {text-align: right;}
+        .text-center-important {text-align: center !important;}
+        /* important 우선순위가 가장 높음 */
+    </style>
+    
+    <!--Css: 캐스캐이드로 적용되는 항목이 있고 아닌 게 있음-->
+    <table>
+        <caption>우도입도 총괄요금표</caption>
+        <caption>테이블 정보 </caption>
+        <thead>
+        <tr>
+            <td>태그 이름</td>
+            <td>설명</td>
+            <td>태그 이름</td>
+            <td>설명</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>table</td>
+            <td>표(table)</td>
+            <td>thead</td>
+            <td>표의 머리(table head)</td>
+        </tr>
+        <tr>
+            <td>td</td>
+            <td>표의 일반 요소(table data)</td>
+            <td></td><!-- 값이 없는 컬럼도 칸은 만들어줘야 틀어지지 않음 -->
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="4">이륜차(오토바이, 자전거) 및 화물 차량은 별도 문의</td>
+        </tr>
+    </tbody>
+    </table>
+
+    <hr>
+    <!-- table head로 제목 행 구성 -->
+    <table>
+        <thead>
+        <tr>
+            <th rowspan="2">구분</th>
+            <th colspan="3">우도입도 총괄요금표</th>
+        </tr>
+        <tr>
+            <td>선박요금</td>
+            <td>도립공원 입장료</td>
+            <td>터미널 이용료</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="text-right">
+            <th>성인</th>
+            <td>2,000원</td>
+            <td>1,000원</td>
+            <td>500원</td>
+        </tr>
+    </tbody>
+        
+    </table>
+</body>
+</html>
