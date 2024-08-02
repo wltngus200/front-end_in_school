@@ -9,9 +9,134 @@
 <body>
     <!-- 사용자가 작성,선택한 내용을 백엔드로 전달 -->
     <!-- action: end-point method: 전달방식(get/post) push delete는 안 됨 -->
+    <!-- input 관련 엘리먼트의 name이 백엔드의 멤버필드 이름과 같아야 한다....? -->
+    <h3>POST 방식</h3>
     <form action="http://localhost:8080/api/user/sign-up" method="post">
+        <div>
+            <label>아이디 : <input type="text" name="uid"></label>
+        </div>
+        <div>
+            <label>비밀번호 : <input type="password" name="upw"></label>
+        </div>
+        <div>
+            <label>이름 : <input type="text" name="nm"></label>
+        </div>
+        <div>
+            <label>프로필 사진 : <input type="file" name="pic" accept="images/*"></label>
+        </div>
+        <div>
+            <input type="submit" value="전송">
+        </div>
+    </form>
+    <hr>
+    <h3>GET 방식</h3>
+    <!-- 쿼리스트링으로 날아감 -->
+    <form action="http://localhost:8080/api/user/sign-up" method="get">
+        <div>
+            <label>아이디 : <input type="text" name="uid"></label>
+        </div>
+        <div>
+            <label>비밀번호 : <input type="password" name="upw"></label>
+        </div>
+        <div>
+            <label>이름 : <input type="text" name="nm"></label>
+        </div>
+        <div>
+            <label>프로필 사진 : <input type="file" name="pic" accept="images/*"></label>
+        </div>
+        <div>
+            <input type="submit" value="전송">
+        </div>
+    </form>
+    <form action="#">
+        <div>아이디 : <input type="text" name="" id="" tabindex="1"></div>
+        <!-- lable 아이디라는 글자에 마우스를 올렸을 때 커서 모양이 달라짐
+            클릭 시 입력창으로 자동 커서 이동 -->
+        <lable><>아이디: <input type="text" name="" id="" tabindex="3"></lable></div>
         
+        <div><label for="id-input-1">아이디:</label></div>
+        <div><input type="text" name="" id="id-input-1" tabindex="2"></div>
+        <!-- tabindex로 탭으로 이동할 떄의 순서 지정 -->
+
+        <div><label>넘버: <input type="number" value="10" step="5"></label></div>
+    
+        <!-- 버튼 만드는 법 -->
+        <div>버튼1: <input type="button" value="버튼1"></div>
+        <div>버튼2: <button type="button">버튼2</button></div>
+        <div>버튼3: <button>버튼3</button></div>
+        <div>버튼4: <input type="submit" value="submit"></div>
+        <div>버튼5: <input type="image" width="100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmvA1MB0ulK7OVmlyN5rqWZFUx_6ugryg0czFqaSeD79uzu5vt_LD87uYkxA&s"></div>
+        <div>버튼6: <input type="reset" value="reset"></div>
+        <!-- 종류: 일반버튼, 서브밋버튼, 리셋버튼 -->
+        <!-- 버튼 1, 2 일반 버튼 
+            버튼 3,4 서브밋 버튼 form 태그의 트리거 역할(백엔드 데이터 전송 시작)
+            버튼 5 이미지 서브밋 버튼
+            버튼 6 리셋 버튼 =form 엘리먼트들을 초기상태로 만듦 -->
+        <!-- form 태그 바깥에 위치하면 종류와 상관 없이 일반버튼이 됨 -->
     </form>
 
+    <hr>
+
+    <form>
+        <!-- 여러 값을 선택하고 싶을 때 사용하는 체크박스 -->
+        <!-- 실제로 날아가는 값은 value값이 날아감 -->
+        <div>
+            취미:
+            <label>축구<input type="checkbox" name="hobbyList" value="1"></label>
+            <label>농구<input type="checkbox" name="hobbyList" value="2"></label>
+            <label>배구<input type="checkbox" name="hobbyList" value="3"></label>
+        </div>
+        <!-- 색상 선택 -->
+        <div>
+            <label>색 선택: <input type="color" value="#ffffff"></label>
+        </div>
+
+        <!-- picker : 날짜, 일시 선택 -->
+        <div>
+            <label>날짜<input type="date"></label>
+        </div>
+        <div>
+            <label>일시<input type="datetime-local"></label>
+        </div>
+        
+        <hr>
+
+        <!-- 단 하나만 선택가능할 때 radio-button 
+                name을 통일(하나의 그룹이 된다)-->
+        <div>
+            성별: 
+            <!-- 이름을 통일하지 않으면 모두 선택이 가능해져버림 -->
+            <label>여성<input type="radio" value="0"></label>
+            <label>남성<input type="radio" value="1"></label>
+            <label>모름<input type="radio" value="2"></label>
+            <br><!-- 간단한 개행 -->
+            성별:
+            <!-- 네임 통일 o -> 필수로 이루어져야 함
+                checked를 주면 1개의 값이 디폴트로 설정되어있음 -->
+            <label>여성<input type="radio" name="gender" value="0" checked></label>
+            <label>남성<input type="radio" name="gender" value="1"></label>
+            <label>모름<input type="radio" name="gender" value="2"></label>
+        </div>
+
+        <div>
+            콘솔 잘 모르겠어요
+            <label><input type="range" min="0" max="100" step="10" id="id-range"></label>
+            <span id="id-span-range-value">0</span>
+        </div>
+    </form>
+    <script>
+        
+        var $range=document.getElementById('id-range');
+        var $range_value=document.getElementById('id-span-range-value');
+
+        $range.addEventListener('change', function(e/*이벤트 객체 주소값*/){
+            //클로저 유무
+            console.log(e.target.value);
+            console.log($range.value);
+            //set
+            $range_value.innerText=$range.value;
+        });
+        // Throttle 쓰로틀링 Debounce 디바운싱
+    </script>
 </body>
 </html>
