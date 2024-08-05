@@ -128,6 +128,42 @@
             <label><input type="range" min="0" max="100" step="10" id="id-range"></label>
             <span id="id-span-range-value">0</span>
         </div>
+        <div>
+            <!-- 간단한 장문 크기 조절 가능함 -->
+            <!-- tezt area는 value를 가지지는 않지만 value속성이 있어도 에러는 안 남 -->
+            <!-- html은 커스텀 속성도 인정은 해주나 해석을 해주지 못 함 -->
+            <!-- 여는 태그와 닫는 태그 사이에 쓰는 값을 표시함(단 여러개의 공백, 엔터를 표시함) -->
+            <label>자기소개: <textarea name="intro" >안녕하세요</textarea></label>
+        </div>
+        <div>
+            <select name="aaa">
+                <!-- querySelector에서 name 속성이 맞지 않음 -->
+                <option value="1">전주비빔밥</option>
+                <option value="2">김치볶음밥</option>
+                
+            </select>
+
+            <!-- select box : 옵션 태그에 value 속성이 있으면 value값이 날아가고 없으면 text-node가 서버로 전송-->
+            <select name="location">
+                <option value="1">서울</option>
+                <option value="2">도쿄</option>
+                <option value="3" selected>베이징</option>
+                <option value="4">오타와</option>
+            </select>
+        </div>
+        <div>
+            <label>
+                배우고 싶은 언어:
+                <!-- name은 멤버필드명 -->
+                <input type="text" name="selLanguage" list="sel-language">
+                <select id='sel-language'>
+                    <!-- 정형화 된 답변을 받고 싶을때 -->
+                    <option>HTML</option>
+                    <option>CSS</option>
+                    <option>JAVASCRIPT</option>
+                </select>
+            </label>
+        </div>
     </form>
     <script>
         
@@ -141,6 +177,27 @@
             //set
             $range_value.innerText=$range.value;
         });
+        // element주소값이라는 표시 :$ 선생님 취향
+        var $idBtnChangeSelected=document.querySelector('#id-btn-change-selected')
+        $idBtnChangeSelected=document.addEventListener('click', e=>{
+            var $selectLocation=document.querySelector('select[name=location]')
+            console.log($selectLocation);
+            // 주소값을 여러개 얻고 싶다 all을 씀으로서 배열 받아옴
+            var optionArr = $selectLocation.querySelectorAll('option');
+            console.log($optionArr);
+
+            for(var i=0; i<$optionArr.length; i++){
+                var item= $optionArr[i];
+                if(item.getAttribute('value')==='2'){
+                    //item.setAttribute('selected', true);
+                    item.selected=true;
+                } else {
+                    item.selected=false;
+                }
+            }
+        });
+        // queryselect는 가장 빨리 만나는 주소값 1개 
+
         // Throttle 쓰로틀링 Debounce 디바운싱
     </script>
 </body>
