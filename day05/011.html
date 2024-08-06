@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자</title>
+    <style>
+        * { } /*모든 태그, 엘리먼트 들*/
+        /* header tag 아래의 h1태그를 선택하겠다 */
+        /* 자손 선택자(Cescendant Selector) */
+        header h1{color: red;}
+        header div {font-style: italic;}
+        /* section ,(and) h1 적용 같은 속성을 둘 이상에게 적용 별개로 취급 */
+        section, h1{ background-color: blueviolet;}
+        /* > (Child Selector-자식 선택자-)는 내 바로 아래의 1차 자식만 선택하겠다 라는 의미 */
+        section>div{color : darkgray;} 
+        /* +(Aqjacent siblings selector) 바로 인접한 형제 선택자, 앞 선택자의 바로 옆에 위치한 엘리먼트 */
+        section>div+h1 {color : magenta}
+        /* General siblings Selector 일반 형제 선택자. 앞 선택자의 바로 옆으로 같은 레벨 위치한 모든 엘리먼트  */
+        section>div~h1 { text-decoration: underline; }
+</style>
+</head>
+<body>
+    <h1>첫 번째 h1</h1>
+    <header>
+        <div>나이쓰!!!!!(1)</div>
+        <!-- header tag 아래의 h1태그 -->
+        <h1>반가워요</h1>
+        <p>
+            <div>나이쓰!!!!!(2)</div>
+        </p>
+    </header>
+    <section>
+        <h1>반가워요 2- 1</h1>
+        <div>나이쓰! 2 (3)</div>
+        <h1>반가워요 2- 2</h1>
+        <h1>반가워요 2- 2</h1>
+        <h1>반가워요 2- 2</h1>
+        <h2>!!!!</h2>
+        <h1>반가워요1</h1>
+        <main>
+            <div>나이쓰! 3 (4)</div>
+            <h1> 반가워요 2</h1>
+        </main>
+    </section>
+</body>
+</html>

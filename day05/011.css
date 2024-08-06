@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+/* 문제 1 : Menu만 선택해서 배경색 silver적용 */
+nav>ul>li>a {background-color: silver;}
+
+/* 문제 2 : Logo만 선택해서 배경색 silver 적용 */
+header>h1 {background-color: silver;} /*header>.title  header>h1.title*/
+
+/* 문제 3 : 인접 형제 선택자(+)를 활용하여 Main section 아래에 있는 menu1~3배경색 silver 적용*/
+    /* 인접형제 선택자는 1개만 선택하기 때문에 menu1 만 선택됨 */
+section h1+ul>li {background-color: green;}
+
+/* 문제 4 : 일반 형제 선택자를 활용하여 Main title, subtitle 아래의 menu1~3에 배경색 blue */
+section h2~ul {color: blue;}
