@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16. font style</title>
+</head>
+<body>
+    <style>
+        /* text-decoration은 줄 긋기 줄 위치(overline line-through, underline)
+        줄 모양 실선, wavy 물결, dotted 점, dashed 점선*/
+
+        /* font-weight 폰트 두께, font style 폰트 모양, 기울기(italic) */
+        div{border : 1px solid #CCC; margin-bottom: 10px; min-height: 200px;}
+        .cls-1 {font-size: large;}
+        .cls-1 .span-1 {text-decoration: underline wavy paleturquoise;}
+        .cls-1 .span-2 {text-decoration: overline wavy;}
+        .cls-1 .span-3 {text-decoration: line-through dashed; font-style: unset;}
+    </style>
+    <div class="cls-1">
+        <span class="span-1">Lorem ipsum</span> dolor sit amet consectetur adipisicing elit. Voluptate, recusandae. Odio fugit <span class="span-2">incidunt perferendis</span> dicta in laborum reiciendis amet corrupti saepe debitis accusantium <span class="span-3">doloremque doloribus</span> molestias dolorem, eum facere facilis?
+    </div>
+    <style>
+        /* vertical-align: middle는 글자를 위한 정렬이 아니고 엘리먼트를 위한 정렬 */
+        /* line-height: 100px 를 주면 박스 내에 가운데 정렬이 되지만, 박스가 커지면 가운데에서 벗어남 */
+        .cls-2 {text-align: justify;}
+        .cls-3 {text-align: center; line-height: 100px;}
+        .cls-4 {text-align: right;}
+    </style>
+    <div class="cls-2">안녕하세요</div>
+    <div class="cls-3">안녕하세요</div>
+    <div class="cls-4">안녕하세요</div>
+</body>
+</html>
