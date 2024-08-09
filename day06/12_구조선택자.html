@@ -8,14 +8,20 @@
 </head>
 <body>
     <style>
+        /* 구조 선택자 : 같은 부모를 가진 그룹에서 선택 */
+        ul.cls-1>li:not(:last-child) {margin-bottom : 5px;}
+        ul.cls-1>li:not(:first-child) {margin-bottom : 10px;}
         ul.cls-1>li:first-child {background-color: ivory;}
         ul.cls-1>li:last-child {background-color : pink;}
         ul.cls-1>li:nth-child(2) {background-color: rosybrown;}
         /* 숫자는 1부터 시작 */
         ul.cls-1>li:nth-child(4) {background-color: aquamarine;}
-        ul.cls-1>li:nth-child(2n) {color: blue;}
-        ul.cls-1>li:nth-child(2n+1) {color: rgb(18, 194, 18);}
-        ul.cls-1>li:nth-last-child(1) {font-size: 2rem;}
+        ul.cls-1>li:nth-child(2n) {color: blue;} /*짝수*/
+        ul.cls-1>li:nth-child(2n+1) {color: rgb(18, 194, 18);} /*홀수*/
+        ul.cls-1>li:nth-last-child(1) {font-size: 2rem;} /*순서가 역순*/
+        /*not 도 조합이 가능 'n번 빼고 전부 다~' 할 때 유용*/
+        ul.cls-1>li:not(:nth-child(4)) {border: 3px dotted red;} /*순서가 역순*/
+
     </style>
     <ul class="cls-1">
         <li>1</li>

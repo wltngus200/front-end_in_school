@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13.선택자 우선순위</title>
+    <style>
+        /* combinatior selector는 점수 반영이 되지 않는다.
+           만약 점수 반영이 되었다면 '반가워요' 2개의 li는 폰트 색상이 파란색이었을 것이이다 */
+        .list>li.item {color :blue;}
+        .list li.item {color : red;}
+    </style>
+</head>
+<body>
+    <ul class="list">
+        <li class="item">
+            <div>반가워요</div>
+        </li>
+        <li class="item">
+            <div>반가워요</div>
+        </li>
+        <li>
+            <div>반가워요</div>
+        </li>
+        <li>
+            <div>반가워요</div>
+        </li>
+    </ul>
+</body>
+</html>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <!-- CSS와 Java Script를 이용해야 함 -->
     <link rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -22,6 +23,7 @@
 </head>
 <body>
     <!-- Slider main container -->
+    <!-- 부모 객체 -->
     <div class="swiper">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
@@ -29,7 +31,7 @@
       <div class="swiper-slide">Slide 1</div>
       <div class="swiper-slide">Slide 2</div>
       <div class="swiper-slide">Slide 3</div>
-      ...
+      ...ㅌ
     </div>
     <!-- If we need pagination -->
     <div class="swiper-pagination"></div>
@@ -42,28 +44,31 @@
     <div class="swiper-scrollbar">lorem</div>
   </div>
   <script>
+    // new Swiper(1,2); swaper 태그들의 부모 지정
+                                // 부모를 지정해줄 엘리먼트 클래스나 id로 지정
+                                // 모든 것을 감싸고 있는 큰 객체
     const swiper = new Swiper('.swiper', {
     // Optional parameters
     // 객체의 멤버필드 : 값
-    direction: 'horizontal',
-    loop: true,
+    direction: 'horizontal', //넘기는 방향
+    loop: false, //무한 슬라이드 여부
     
 
-    // If we need pagination
+    // If we need pagination, 페이지네이션(페이징 숫자가 아닌 동그란 점)
     // 중괄호 또한 객체
     pagination: {
-        el: '.swiper-pagination',
+        el: '.swiper-pagination', //페이지네이션이 표시될 엘리먼트 지정
     },
 
-    // Navigation arrows
+    // Navigation arrows // 화살표 표시
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-button-next', // 다음 element 지정
+        prevEl: '.swiper-button-prev', // 이전 element 지정
     },
 
-    // And if we need scrollbar
+    // And if we need scrollbar // 스크롤 바 표시
     scrollbar: {
-        el: '.swiper-scrollbar',
+        el: '.swiper-scrollbar', //스크롤바가 표시될 element 지정
     },
     });
   </script>
