@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20. 박스모델</title>
+</head>
+<body>
+    <style>
+        /* margin - 경계선 바깥
+           border - 엘리멘트 경계선
+           padding - 경계선 안 
+           content - 내용 */
+           
+           .cls-1>div {border:1px solid #ccc;}
+           .cls-1>div:first-child {margin-left : 30px;}
+           .cls-1>div:nth-child(2) {padding-left : 30px;} /* 경계선 안 쪽에 차리 차지*/
+    </style>
+    <div class="cls-1">
+        <div>안녕하세요</div>
+        <div>반가워요</div>
+    </div>
+
+    <hr>
+    
+    <style>
+        .cls-2>div {border:1px solid #ccc} 
+        .cls-2>div:nth-child(2) {margin: 10px;} /* 4면 마진값 적용 */
+        .cls-2>div:nth-child(3) {margin: 10px;} /* 4면 마진값 적용 */
+        .cls-2>div:nth-child(4) {padding : 10px 30px;} /* 10px는 위아래, 30px는 좌우 */
+        .cls-2>div:nth-child(5) {padding : 10px 30px 50px;} /* 10px는 위, 30px는 좌우 50px는 아래 */
+        .cls-2>div:nth-child(6) {padding : 10px 30px 50px 70px;} /* 10px는 위, 30px는 우 50px는 아래 70px 좌 */
+        .cls-2>div:nth-child(7) {padding-left : 30px;} /* padding 왼쪽 */
+        .cls-2>div:nth-child(8) {margin-right : 30px; margin-top: 20px;} /* margin 우, 위 */
+        .cls-2>div:nth-child(9) {margin: 20px 30px 0 0;} /* margin 우, 위 0은 단위를 붙이지 않는다*/
+        .cls-2>div:nth-child(10) {border-color: green pink;} /* 색깔 지정도 크기지정과 같은 순서로 진행 */
+    </style>
+    <div class="cls-2">
+        <div>잘있어요</div>
+        <div>다시 만나요</div>
+        <div>아침해가 뜨면~</div>
+        <div>매일 같은 사람들과~</div>
+        <div>또다시 새로운 하루 일을~</div>
+        <div>시작해~</div>
+        <div>안녕하세요~</div>
+        <div>hello~</div>
+        <div>wow~</div>
+        <div>패딩~</div>
+        <div>마진~</div>
+    </div>
+
+    <hr>
+
+    <style>
+        /* width height는 content크기를 지정하는 것
+           box-sizing content가 아니라 border 기준으로 */
+        .cls-3>div {border:1px solid #ccc;}
+        .cls-3>div:first-child {width:100px; height:100px;}
+        .cls-3>div:nth-child(2) {width:100px; height:100px;padding: 20px;}
+        /* border 1px *2 + padding 20 *2 = 42를 빼 줘야 함 */
+        .cls-3>div:nth-child(3) {width:58px; height:58px;padding: 20px;}
+        .cls-3>div:nth-child(4) {box-sizing: border-box; width: 100px; height: 100px; padding: 50px;}
+        /* box-sizing 기본 값이 contetn
+        /* box-sizing 값을 border-box로 변경하면 width, height는 border크기 기준으로 된다*/
+        /* {box-sizing:border-box; 이 속성을 무조건 주는 것이 좋다.} */
+    </style>
+    <div class="cls-3">
+        <div>1. 헬로헬로 실제 크기 100X100</div>
+        <div>2. 굿바이굿바이 실제크기 141X141</div>
+        <div>3. 1번 크기와 맞추기 위해 계산 100X100</div>
+        <div>4. 1번 크기와 맞추기 위해 계산 100X100</div>
+    </div>
+</body>
+</html>

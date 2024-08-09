@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22.포지션 픽스</title>
+</head>
+<body>
+    <style>
+
+        /*
+        position-fixed를 사용하실 땐 위치값을 조정해줘야한다
+        viewport에 고정이 된다 
+         */
+        body{margin:0;}
+        .fixed { height: 60px; background-color: beige; position:fixed; top: 50px;}
+        .cls-1{ margin-top: 60px; height : 2000px; }
+        .sticky{height: 50px; background-color: burlywood; margin-top: 100px;}
+    
+    </style>
+    <div class="fixed">fixed</div>
+    <div class="cls-1">
+        div.cls-1
+    </div>
+    <div class="fixed">fixed</div>
+    <div class="cls=1">
+        div.cls-1
+    </div>
+</body>
+</html>
