@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* main axis 속성값 중 space-로 시작하는 속성값이 있다 */
+        .container{
+            display: flex; background-color: antiquewhite; 
+            height: 80px; margin-bottom: 10px;
+        }
+        .container > div {border: 1px solid #ccc}
+        .space-around {justify-content: space-around;} /*아이템(자식)을 기준으로 양쪽 여백이 같음*/
+        .space-between {justify-content: space-between;} /*처음과 끝 자식은 끝에 붙는다 여백은 동일*/
+        .space-evenly {justify-content: space-evenly;} /*균일하게 배치됨*/
+    </style>
+</head>
+<body>
+    <h3>justify-content: space-around</h3>
+    <div class="container space-around">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <h3>justify-content: space-between</h3>
+    <div class="container space-between">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <h3>justify-content: space-evenly</h3>
+    <div class="container space-evenly">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <div>25.html로 잠시 건너감 margin의 개념</div>
+</body>
+</html>

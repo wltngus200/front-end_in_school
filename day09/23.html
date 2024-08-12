@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24. position 응용</title>
+    <style>
+        .slidewrapper { width: 600px; height: 400px; background-color: #ebebeb;
+                        position: relative; margin : 0 auto;}/* 좌 우에 margin을 auto */
+        .btn {
+            background-color: #000; padding: 0 20px; line-height: 50px;
+            text-decoration: none; color:#fff; display:inline-block; /* block태그로 줘서 위치조정 */
+            position: absolute; top: calc(200px - 25px);} /*함수와 괄호 후엔 공백 X 빼기 기호 앞 뒤로는 공백*/
+        .prev {/*left: -79px;*/ /*right: 100%;*/ right:calc(100% + 5px)}
+        .next {/*right : -79px;*/ left: 100%;}
+        /* %를 줌으로 인해서 버튼의 글자가 늘어나도 걱정 없다 여백을 주고 싶은 경우는 100을 초과하는 값을 넣거나 calc 사용 */
+    </style>
+</head>
+<body>
+    <h1>position exercise</h1>
+    <div class="slidewrapper">
+        <h2>slide countents</h2>
+        <a href="" class="btn prev">PREV</a>
+        <a href="" class="btn next">NEXT</a>
+    </div>
+</body>
+</html>

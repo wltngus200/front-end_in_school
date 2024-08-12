@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24.flex</title>
+    <!-- flex는 부모가 필수적으로 필요, 자식들을 control -->
+    <style>
+        /* 블락 인라인 상관 없이 flex에만 집중
+           방향 
+            가로(row) : 왼->오, 오->왼     (왼->오 가 디폴트 방향)
+            세로(column) : 위->아래, 아래->위 
+            
+            
+            정방향 : main axis  크로스 방향축 : cross axis
+            왼 -> 오            위 -> 아래
+            오 -> 왼            위 -> 아래
+            위 -> 아래          왼 -> 오
+            아래 -> 위          왼 -> 오
+
+            메인 방향축 컨트롤 속성 : justify-content
+            크로스 방향축 컨트롤 속성 : align-item
+        */
+        .container {display: flex; background-color: beige; height: 100px; margin-bottom: 10px;}
+        .container > div {border: 1px solid #ccc;}
+        .direction-row-reverse {flex-direction: row-reverse;} /*row가 가로 방향*/
+        .direction-column {flex-direction: column;} /*column 세로방향*/
+        .direction-column-reverse {flex-direction: column-reverse;} /*column 세로방향*/
+
+        /* justify-content 메인방향 : start(기본값) or flex-start , end or flex-end, center */
+        .justify-content-start {justify-content: start;}
+        .justify-content-end {justify-content: end;}
+        .justify-content-center {justify-content: center;}
+     
+        /* align-item 크로스방향 : start, end, center, stretch(기본값) */
+        .align-item-start {justify-content: start;}
+        .align-item-end {justify-content: end;}
+        .align-item-center {justify-content: center;}
+    </style>
+</head>
+<body>
+    <div>flex-direction : row</div>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <div>flex-direction : row-reverse</div>
+    <div class="container direction-row-reverse">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <div>flex-direction : row-column</div>
+    <div class="container direction-column">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <div>flex-direction : column-reverse</div>
+    <div class="container direction-column-reverse">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <hr> <!-- ====================================================-->
+
+    <span>align-item-start</span>
+    <div class="container justify-content-start">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <span>align-item-start</span>
+    <div class="container direction-row-reverse align-item-start">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <span>align-item-start</span>
+    <div class="container direction-column">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <span>align-item-start</span>
+    <div class="container direction-column">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+
+    <hr>
+
+    <pre>
+        정중앙
+        1
+        2
+        3
+    </pre>
+    <span>123 정중앙</span>
+    <div class="container justify-content-center align-item-center">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</body>
+</html>

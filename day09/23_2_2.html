@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0;}
+         body {scroll-behavior: smooth;}
+        .mainmenu { color: #fff; background-color: #333; padding-left: 40px;}
+        .mainmenu ul {background-color: #666; display: none;}
+        .mainmenu::after {content: ''; display: block; clear : both;}/* 가상요소 */
+        .mainmenu>li {cursor: pointer; float: left; list-style-type: none; margin-right: 30px; line-height: 35px; color:#fff;}
+        .mainmenu>li ul li {padding: 0 10px; white-space: nowrap;}
+        .mainmenu>li:hover ul {display: block; position: absolute;}
+        /* cursor: pointer 커서 스타일 */
+        .container {height: 3000px;}
+        .back_to_top {padding: 10px 20px; background-color: #444; color : #fff;
+                        font-weight: bold; text-transform: uppercase; text-decoration: none;
+                        position : fixed; right: 50px; bottom: 50px;}
+    </style>
+</head>
+<body>
+    <ul class="mainmenu" id="id_top">
+        <li>
+            About Us
+            <ul>
+                <li>ceo greeting</li>
+                <li>history</li>
+                <li>vision</li>
+            </ul>
+        </li>
+        <li>
+            works
+            <ul>
+                <li>Design</li>
+                <li>Mobile</li>
+            </ul>
+        </li>
+        <li>Service</li>
+        <li>Location</li>
+    </ul>
+    <div class="container">
+        내용이 들어감
+    </div>
+    <a href="#id_top" class="back_to_top">TOP</a>
+    <!-- 해당 링크로 재접속이 아닌 실제로 스크롤이 올라감 -->
+</body>
+</html>

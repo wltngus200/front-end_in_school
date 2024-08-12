@@ -13,17 +13,22 @@
         .cls-1 {position: relative;}
         .cls-1 .p-relative-1 {position: relative; left: 20px; top: 50px;}
         .cls-1 .p-absolute-1 {position: absolute; left: 20px; top: 50px;}
+        /* position : static, relative, absolute, fixed, sticky */
+        /* position 디폴트 값은 static */
+
+        /* 기본 위치조정 속성은 top, bottom, right, left가 있음 */
+
+        /* 위치 조정 없이 position만 relative로 바꾸게 되면 static과 위치가 같다 */
         /* absolute 위치조정은 같으나 가장 먼저 하는 일이 다름
             가장 먼저 부모(static이 아닌 부모)를 찾아 기준으로 삼는다  */
             /* 포지션을 변경하지 않으면 static -> body를 부모로 삼음 */
-        /* relative는 자신이 원래 있던 위치에서 조정
+        /* relative는 자신이 원래 있던 위치에서 조정(위치조정이 가능해지는 점을 빼면 static과 흡사)
            absolute는 ????????????????????? */
+
 
         /* 포지션의 디폴트 값은 static
         엘리먼트 위치조정 속성 top right bottom left 
         static은 위치조정 속성이 적용이 안 됨 static만 아니면 된다*/
-
-        /* 위치 조정 없이 position만 relative로 바꾸게 되면 static과 위치가 같다 */
 
         /* 위치 조정은 좌우값 1개, 상하값 1개씩만 적용 */
         div {border:1px solid #ccc; margin:5px;}
@@ -35,7 +40,9 @@
         .cls-1>.p-relative-2 {left: 10px; position: relative;}
         .cls-1>.p-relative-3 {left: 10px; top: 30px; position: relative;}
         .cls-1>.p-relative-4 {left: -10px; top: -30px; position: relative;}
+        .cls-1 p.p-absolute-1 {position:absolute; left: 20px; top: 50px; right: 20px;}
 
+        /* relative는 static과 비슷하다. 다만 위치조정이 가능해진다. 원래 있던 위치에서 고정 */
     </style>
     <div class="cls-0"></div>
     <div class="cls-1">
@@ -43,6 +50,11 @@
         <div class="p-relative-1">relative-2</div>
         <div class="p-absolute-1">absolution-1</div>
     </div>
+
+    <!-- absolute는 가장 먼저 static이 아닌 부모가 필요함 -> 그 부모가 기준이 됨 -->
+    <!-- 가장 가까운 부모부터 찾으며 static이 없는 부모가 없을 경우엔 <body>가 부모가 됨 -->
+    <!-- 따라서 relative는 자신이 원래 있던 위치에서 조정, absolute는 부모 좌측상단 기준에서 조정 -->
+    
     <hr>
 
     <style>
