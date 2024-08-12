@@ -34,9 +34,9 @@
         .justify-content-center {justify-content: center;}
      
         /* align-item 크로스방향 : start, end, center, stretch(기본값) */
-        .align-item-start {justify-content: start;}
-        .align-item-end {justify-content: end;}
-        .align-item-center {justify-content: center;}
+        .align-item-start {align-items: start;}
+        .align-item-end {align-items: end;}
+        .align-item-center {align-items: center;}
     </style>
 </head>
 <body>
@@ -78,14 +78,14 @@
     </div>
 
     <span>align-item-start</span>
-    <div class="container direction-row-reverse align-item-start">
+    <div class="container align-item-start">
         <div>1</div>
         <div>2</div>
         <div>3</div>
     </div>
 
-    <span>align-item-start</span>
-    <div class="container direction-column">
+    <span>align-item-end</span>
+    <div class="container align-item-end">
         <div>1</div>
         <div>2</div>
         <div>3</div>
