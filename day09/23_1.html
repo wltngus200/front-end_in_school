@@ -11,13 +11,15 @@
         .read-more{ position: absolute; background-color: black; color: #fff; text-decoration: none;
                     padding: 5px 10px; right: 0; bottom: calc(100% + 5px)}
 
-        /*  */
+        /* html은 있냐 없냐가 중요(골격을 만듦) CSS에서 위치는 조정 가능
+        단, 어디 있냐에 따라 조정이 편하냐 어렵냐가 갈리긴 함 */
     </style>
 </head>
 <body>
     <div class="answer"></div>
     <div class="lasetest-news">
         <a href="#" class="read-more">READ MORE</a>
+        <!-- 부모를 벗어나 위로 올라와야 하는 a tag -->
         <ul>
             <li>리스트 1</li>
             <li>리스트 2</li>

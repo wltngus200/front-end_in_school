@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex 연습</title>
+</head>
+<body>
+    <style>
+        .container {
+            display: flex; flex-direction: row;
+            width:100px; border: 2px solid #000;
+            background-color: yellow;
+            flex-wrap: nowrap;
+            margin-bottom: 10px;
+            flex-basis: auto;/* auto가 디폴트 값, 자식들의 기본 크기 설정 */
+        }
+        .container>div {border: 2px solid #000; background-color: green; height:50px;}
+        .container2>div {flex-basis: 20px;}
+        .container3>div {width: 40px;}
+    </style>
+    <div class="container">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+        <div>F</div>
+        <div>G</div>
+    </div>
+    <div class="container" style="flex-direction: row-reverse; flex-wrap:wrap-reverse; height: 200px">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+        <div>F</div>
+        <div>G</div>
+    </div>
+    <div class="container" style="flex-direction: row-reverse; height: 200px">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+        <div>F</div>
+        <div>G</div>
+    </div>
+    <div class="container container2" style="flex-basis: 130px;">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+        <div>F</div>
+        <div>G</div>
+    </div>
+    <div class="container container4">
+        <div>A</div>
+        <div style="flex-grow: 1">flex-grow로 처리</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+        <div style="flex-grow: 1">flex-grow로 처리</div>
+        <!-- 남는 공간을 grow속성을 가진 애들끼리 같은 비율로 가져감 숫자가 서로 다를 경우 그 비율대로 결정됨 -->
+        <div>G</div>
+    </div>
+    <!-- flex-shrink는 babis 값 보다 작아질 수 잇는지 결정
+        flex-shrink: 1; 기본 값 -->
+        <style>
+            .container6 div {flex-basis: 70px;}
+        </style>
+    <div class="container container6">
+        <div>A</div>
+        <div style="flex-shrink: 0">flex-shrink로 처리</div>
+        <!-- 0이 되면 변하지 않겠다. 고정값을 주지 않음 -->
+        <div>C</div>
+        <div style="flex-shrink: 1">D</div>
+        <div>E</div>
+        <div>F</div>
+        <div>G</div>
+    </div>
+    <!-- flex-babis, flex-grow, flex-shrink 
+    
+        flex: 1 2 auto; //2: grow, 1:shrink, auto: basis-->
+</body>
+</html>

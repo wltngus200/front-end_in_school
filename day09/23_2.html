@@ -9,8 +9,10 @@
         * {margin: 0; padding: 0;}
         .mainmenu { color: #fff; background-color: #333; padding-left: 40px;}
         .mainmenu ul {background-color: #666; display: none;}
-        .mainmenu::after {content: ''; display: block; clear : both;}/* 가상요소 */
+        .mainmenu::after {content: ''; display: block; clear : both;}/* 가상요소 float속성에 딸려가지 않게 함 */
         .mainmenu>li {cursor: pointer; float: left; list-style-type: none; margin-right: 30px; line-height: 35px; color:#fff;}
+        /*  float: left;는 왼쪽부터 붙어나감, 메뉴에 해당하지 않는 내용도 딸려 올 수 있기 때문에 
+        float이 적용 안 되었으면 하는 것에 clear를 붙여줘야 함*/
         .mainmenu>li ul li {padding: 0 10px; white-space: nowrap;}
         .mainmenu>li:hover ul {display: block; position: absolute;}
         /* cursor: pointer 커서 스타일 */
@@ -36,5 +38,6 @@
         <li>Service</li>
         <li>Location</li>
     </ul>
+    <div>qwerty</div>
 </body>
 </html>
