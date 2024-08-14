@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid</title>
+    <style>
+       
+        .container {
+            display: grid; background-color: yellow;
+            grid-template-areas: 
+            "header header header"
+            "   a   main    b   "
+            " . . . "
+            "footer footer footer";
+        }
+        .item {border: 2px solid #000; border-radius: 5px; background-color: #ff6937;}
+        .c1{grid-template-columns: repeat(3, 1fr);}
+        .c1>div:first-child {grid-column: 1 / 3;}
+        /* 그리드 영역 이름 할당시 따옴표 쌍따옴표가 들어가지 않게 주의 */
+        .header {grid-area: header;}
+        .sidebar-a {grid-area: a;}
+        .main-content {grid-area: main;}
+        .sidebar-b {grid-area: b;}
+        .footer {grid-area: footer;}
+    </style>
+</head>
+<body>
+    <!-- 순서는 상관 없이 자식이기만 하면 됨 -->
+    <div class="container">
+        <div class="sidebar-b"></div>
+        <div class="main-content"></div>
+        <div class="header"></div>
+        <div class="sidebar-b"></div>
+        <div class="footer"></div>
+    </div>
+</body>
+</html>

@@ -11,7 +11,9 @@
     <style>
         .container {border: 2px solid #000; background-color: yellow; display: grid;}
         .container>div {margin: 5px; border: 2px solid #111; padding: 5px;}
+        /* columns는 각 칸을 의미 3개를 주었다는 건 3줄로 관리하겠다는 의미 */
         .c1 {grid-template-columns: 70px 70px 70px; grid-template-rows:  100px 100px 100px;}
+        /* 3*3 이외의 값은 auto로 적용 되어 칸의 크기가 다르다 */
     </style>
     <div class="container c1">
         <div>item1</div>
@@ -23,7 +25,9 @@
     <hr>
     <span>2 grid</span>
     <style>
-        .c2 { grid-template-columns: 100px 100px; grid-template-rows: 100px auto 150px;}
+        .c2 { grid-template-columns: 100px 100px; grid-template-rows: auto 100px auto 150px;
+        grid-auto-rows: 300px}
+        /* grid-auto-rows는 관리 안되는 즉 template에서 지정되지 않은 애들만 적용됨 */
     </style>
     <div class="container c2">
         <div>item1</div>
@@ -43,8 +47,9 @@
     <hr>
     <span>3 grid</span>
     <style>
-        .c3 { grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr 1fr;}
-        /* 비율에 따라 결정 fr 위의 경우엔 3등분 */
+        .c3 { grid-template-columns: 1fr 1fr 100px; grid-template-rows: 1fr 1fr 1fr;}
+        /* 비율에 따라 결정 fr 위의 경우엔 100px를 나눠가지고 나머지를 비율대로 1fr 1fr 1fr로 하면 3등분 */
+        /* 1fr과 auto는 흡사하다(거의 같다고 보면 됨) 1fr 1fr=auto auto 섞어 사용할 경우 안 됨 */
     </style>
     <div class="container c3">
         <div>item1</div>
@@ -64,7 +69,9 @@
     <hr>
     <span>4 grid</span>
     <style>
-        .c4 { grid-template-columns: repeat(3,1fr); grid-template-rows: repeat(3,1fr);}
+        .c4 { height: 500px;
+            grid-template-columns: repeat(3,1fr); grid-template-rows: repeat(3,1fr);}
+        /* 각각 3번 적는 게 아니라 반복 repeat(2, 100px 1fr) => 100px 1fr 100px 1fr */
         /* 3번 반복 */
     </style>
     <div class="container c4">
@@ -88,6 +95,7 @@
         /* min값 max값 사용 가능 */
         .c5 { grid-template-columns: repeat(3,1fr); 
             grid-template-rows: repeat(3, minmax(100px, auto));}
+                                            /* 각각 min, max */
         /* 3번 반복 */
     </style>
     <div class="container c5">
