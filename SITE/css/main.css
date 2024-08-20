@@ -77,3 +77,36 @@ header {height: 100vh; background: url("../images/header_bg.jpg") no-repeat cent
 header >.slogan{width:964px; border: 10px solid #ad7835; box-sizing: border-box; padding: 76px 0 90px;}
 header >.slogan>n2 {font-family: 'Raleway', sans-serif; font-size:24px; font-weight: bold;}
 header >.slogan>h2::after {content: ''; width: 100px; height: 4px; position: absolute; bottom: -10px; left: calc(50% - 50px); background-color: #fff; margin: 0 auto;}
+
+/* ---------about me------------ */
+.about_me{background-color: #373737; padding: 70px 70px 80px;/*위 아래 좌우*/ position: relative;}
+.about_me p {width: 470px;}
+.about_me img {position: absolute; top: -55px; right:64px}/*앱솔루트는 붕 뜨기 때문에 공간차지 X*/
+main > section+section {margin-top : 244px;}
+
+
+/* ---- lastest articles ---- */
+.latest_articles {display : flex; justify-content: center; flex-direction: column; align-items: center;}
+.latest_articles h2 {text-align: center;}
+.latest_articles_list {display: flex; justify-content: space-between;}
+.latest_articles_list li {width: 370px;}
+.latest_articles_list li:nth-child(2) {margin-top:52px;}
+.lastet_articles_list li h3{margin-top: 29px; font-size: 22px; border-bottom: 1px solid #ab7835; padding-bottom: 13px; margin-bottom: 30px;}
+.lastet_articles_list li p { margin-bottom: 30px;}
+.lastet_articles_list li a { font-size: 16px; line-height: 16px; color: #ab7835; text-transform:capitalize;}
+.latest_articles_list li a img {vertical-align : 0px; margin-left: 20px;}
+
+/* ---------- contect ---------- */
+.contect {background: #373737; padding: 70px 70px 80px; display: flex; justify-content: flex-start;}
+.contect img {position : absolute; left: 64px; top: -55px;}
+.contect form {width: 470px;}
+.contect form .field {display: flex; justify-content: space-between;}
+.contect form .field input {width: 214px;}
+.contect from .field input::placeholder, .contect form .field textarea::placeholder {color: #fff;}
+.contect from .field textarea {color: #fff; resize:none; margin-bottom: 58px;}
+
+/* ----- footer ----- */
+footer{margin: 351px 0 190px;}
+footer .social_link {display: flex; justify-content: center; gap:30px;}
+footer .social_link a {width: 80px; height: 80px; display: block; box-sizing: border-box; border:1px solid #6b4922; align-items: center; font-size: 33px; color: #ad7835; transition: 0.35s;}/*a는 블락태그가ㅁ 아니기 때문에 크기 조정이 먹히지 않음*/
+footer .social_link a:hover {background-color: #ad7835; color: #fff}
